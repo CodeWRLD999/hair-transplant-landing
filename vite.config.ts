@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import path from 'path';
-import { vercel } from 'vite-plugin-vercel'; // Add Vercel plugin
+import vercel from 'vite-plugin-vercel'; // Corrected import
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    vercel(), // Enable Vercel support for API routes
+    vercel(), // Use the default export
   ],
   resolve: {
     alias: {
@@ -27,7 +27,6 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
-  // Ensure ES module output for Vercel
   esbuild: {
     platform: 'node', // Target Node.js for API
   },
