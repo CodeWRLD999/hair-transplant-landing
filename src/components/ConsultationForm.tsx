@@ -13,12 +13,31 @@ const ConsultationForm: React.FC = () => {
     bestTime: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/sendConsultationEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setError(data.message || 'Failed to submit consultation');
+      }
+    } catch (err) {
+      setError('An error occurred. Please try again later.');
+      console.error('Submission error:', err);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -100,6 +119,7 @@ const ConsultationForm: React.FC = () => {
                   </SelectContent>
                 </Select>
               </div>
+              {error && <p className="text-red-500 text-sm">{error}</p>}
               <Button 
                 type="submit" 
                 className="w-full bg-yellow-600 hover:bg-yellow-500 text-white py-3 text-lg font-semibold"
