@@ -15,7 +15,7 @@ const BenefitsSection: React.FC = () => {
     },
     {
       icon: Award,
-      title: "Experienced Senior Sylist",
+      title: "Experienced Senior Stylist",
       description: "Over 15 years specializing in hair replacement."
     }
   ];
