@@ -11,7 +11,7 @@ const HeroSection: React.FC = () => {
             Get Your Confidence Back with Natural-Looking Hair Replacement in Poole
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
-            Book your free, private consultation today — discreet, professional, and no obligation.
+            Discreet Private Salon.
           </p>
           <Button
           id="consultation-button" 
