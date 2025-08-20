@@ -1,0 +1,18 @@
+#background{
+    background-image: url('/assets/hair-replacement-back.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#square{
+    background: linear-gradient(135deg, #d3d3d3, #a9a9a9); /* Light to darker grey */
+    border: 2px solid #888;
+    box-shadow: inset 2px 2px 5px #fff, inset -2px -2px 5px #555, 2px 2px 8px rgba(0,0,0,0.3);
+    opacity: 0.55;
+    border-radius: 6px;
+}
+
+#consultation-button{
+    opacity: 200%;
+}
