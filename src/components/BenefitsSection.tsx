@@ -6,7 +6,7 @@ const BenefitsSection: React.FC = () => {
     {
       icon: Lock,
       title: "Private, 1-on-1 Consultation",
-      description: "Discreet salon setting at 12 Oakfield Road."
+      description: "Discreet Private Salon."
     },
     {
       icon: Scissors,
